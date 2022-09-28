@@ -14,3 +14,9 @@ h1{
 article header {
     background-color: chartreuse
 }
+
+img {
+   width: 400px;
+   height: 400px;   
+       
+}

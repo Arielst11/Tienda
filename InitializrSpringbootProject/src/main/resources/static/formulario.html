@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+    </head>
+    <body>
+        <header>
+            Ejemplo formulario
+        </header>
+        <a href="index.html">inicio</a>
+        <section>
+        <article>
+            <h3>formulario</h3>
+            <p>formulario ejemplo</p>
+            
+            <form action="confirmacion.jsp" method="post" > <--<!-- el post es para que no se vea la info en el navegador de todo lo que se envio -->
+                
+                <label> nombre: </label>
+                <input type="text" name="nombre" placeholder="nombre completo"><br>  <-<!-- se puede poner required para hacerlo obligatorio -->
+                
+                <label> correo </label>
+                <input type="email" name="correo" placeholder="your email here"><br><!-- se puede poner required para hacerlo obligatorio -->
+                
+                <input type="submit" name="enviar" value="enviar"><br>
+                
+                <label>fecha de reserva</label>
+                <input type="date" name="fecha"><br>
+                
+                
+                 <label>comida favorita</label>
+                 Koreana <input type="checkbox" name="koerana"><br><!-- comment -->
+                 japonesa <input type="checkbox" name="japonesa"><br>
+                 
+                 <label>asistencia</label><!-- comment -->
+                 si <input type="radio" name="asistencia" value="si"><br><!-- tienen el mismo nombre por eso se marca solo uno a la vez -->
+                 no <input type="radio" name="asistencia" value="no"><br><--<!-- tienen el mismo nombre por eso se marca solo uno a la vez -->
+                 
+                 <label>Codigo secreto de abordaje</label>
+                 <input type="password" name="codigo">
+                 
+                 <input type="submit" name="emviar" value="enviar"> 
+            </form> 
+        </article>       
+            </section>
+        <div>TODO write content</div>
+    </body>
+</html>
