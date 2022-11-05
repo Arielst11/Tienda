@@ -1,11 +1,15 @@
 package com.tienda.domain;
 
 import java.io.Serializable;
+import javax.persistence.*;
+/*
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
+*/
 import lombok.Data;
 
 @Data
@@ -17,6 +21,7 @@ public class Cliente implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_cliente")
     Long idCliente;
     
     String nombre;
@@ -24,6 +29,10 @@ public class Cliente implements Serializable {
     String correo;
     String telefono;
 
+    @JoinColumn(name = "id_credito" , referencedColumnName = "id_credito")
+    @ManyToOne
+    private Credito credito;
+    
     public Cliente() {
     }
 
@@ -32,5 +41,18 @@ public class Cliente implements Serializable {
         this.apellidos = apellidos;
         this.correo = correo;
         this.telefono = telefono;
-    } //Regresamos 8:10
+    } 
+
+    public Cliente(Long idCliente, String nombre, String apellidos, String correo, String telefono, Credito credito) {
+        this.idCliente = idCliente;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.credito = credito;
+    }
+
+
+
+
 }

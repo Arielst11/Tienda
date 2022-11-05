@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClienteDao 
         extends JpaRepository<Cliente, Long>{
-    
+    // esto mapea la tabla que corresponde
 }

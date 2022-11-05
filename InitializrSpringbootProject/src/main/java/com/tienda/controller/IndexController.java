@@ -1,7 +1,7 @@
 package com.tienda.controller;
 
-import com.tienda.dao.ClienteDao;
-import com.tienda.service.ClienteService;
+import com.tienda.dao.ArticuloDao;
+import com.tienda.service.ArticuloService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class IndexController {
     
     @Autowired
-    private ClienteService clienteService;
+    private ArticuloService articuloService;
     
     @GetMapping("/")
     public String inicio(Model model) {
         var texto = "Estamos en semana 6";
         model.addAttribute("mensaje", texto);
         
-        var clientes=clienteService.getClientes();
+        var articulos=articuloService.getArticulos(true);
         
-        model.addAttribute("clientes",clientes);
+        model.addAttribute("articulos",articulos);
         return "index";
     }
 }
