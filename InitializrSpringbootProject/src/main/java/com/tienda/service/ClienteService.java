@@ -15,4 +15,9 @@ public interface ClienteService {
     public void save(Cliente cliente);
     
     public void delete(Cliente cliente);
+    
+    public List<Cliente> buscarPorNombre(String nombre);
+    
+    public List<Cliente> buscarPorApellido(String nombre);
+    
 }

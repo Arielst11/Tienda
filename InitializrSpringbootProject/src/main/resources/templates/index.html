@@ -11,8 +11,12 @@
         <header th:replace="layout/plantilla :: header"/>  
         <a href="layout/plantilla.html"></a>
         
+        
+        
         <div class ="contenido"> 
         <h2>Nuestros artículos</h2>
+        
+        <a th:href= "@{/cliente/buscar}">Agregar</a>
         
          <div th:if="${articulos !=null and !articulos.empty}">
             <table border="1">

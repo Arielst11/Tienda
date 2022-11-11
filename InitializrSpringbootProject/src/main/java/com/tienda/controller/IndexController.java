@@ -25,4 +25,11 @@ public class IndexController {
         model.addAttribute("articulos",articulos);
         return "index";
     }
+
+ @GetMapping("/cliente/buscar")
+    public String buscar(Model model) {
+        return "/cliente/buscar";
+    }
+
+
 }

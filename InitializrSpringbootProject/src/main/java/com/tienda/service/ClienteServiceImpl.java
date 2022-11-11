@@ -19,6 +19,13 @@ public class ClienteServiceImpl implements ClienteService {
     private CreditoDao creditoDao;
     
     
+   
+    
+    @Override
+    @Transactional(readOnly = true)
+    public List<Cliente> buscarPorNombre(String nombre) {
+        return (List<Cliente>)clienteDao.findByNombre(nombre);
+    }
     
     @Override
     @Transactional(readOnly = true)
@@ -45,6 +52,13 @@ public class ClienteServiceImpl implements ClienteService {
     @Transactional
     public void delete(Cliente cliente) {
         clienteDao.delete(cliente);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Cliente> buscarPorApellido(String apellido) {
+    return (List<Cliente>)clienteDao.findByApellidos(apellido);    
+        
     }
     
 }
