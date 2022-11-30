@@ -3,8 +3,10 @@ com\tienda\controller\ArticuloController.class
 com\tienda\domain\Credito.class
 com\tienda\service\ArticuloServiceImpl.class
 com\tienda\service\CategoriaServiceImpl.class
+com\tienda\SecurityConfig.class
 com\tienda\domain\Categoria.class
 com\tienda\controller\CategoriaController.class
+com\tienda\WebConfig.class
 com\tienda\controller\IndexController.class
 com\tienda\domain\Cliente.class
 com\tienda\service\ClienteServiceImpl.class

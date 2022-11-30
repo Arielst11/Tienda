@@ -3,36 +3,27 @@
       xmlns="http://www.w3.org/1999/xhtml">
     <head th:replace="layout/plantilla :: head">
         <title>TechShop</title>
-        <meta charset="UTF-8"/> 
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
-        
-    </head>
+       </head>  
+   
     <body>
        
-        <header th:replace="layout/plantilla :: header"/>  
+        <header th:repalace="layout/plantilla :: header"/>  
         <a href="layout/plantilla.html"></a>
         
         
-        
-        <div class ="contenido"> 
-        <h2>[[#{index.titulo}]]</h2>
-        
         <a th:href= "@{/cliente/buscar}">buscar</a>
-        
-         <div th:if="${articulos !=null and !articulos.empty}">
-            <table border="1">
-                <tr>
-                    <th>[[#{articulo.descripcion}]]</th>
-                    <th>[[#{articulo.precio}]]</th> 
-                    <th>[[#{articulo.comprar}]]</th>   
-                </tr>
-                <tr th:each="articulo : ${articulos}"> <!-- para cada articulo de la lista articulos -->
-                    <td>[[${articulo.descripcion}]]</td>
-                    <td style="text-align: right">[[${#numbers.formatDecimal(articulo.precio,3,2)}]]</td>
-                    <td><a th:href= "@{/carrito/agregar/} + ${articulo.idArticulo}"></a>[[#{accion.agregar}]]</td>
-                           
-                </tr>            
-            </table>
+        <div class ="container"> 
+        <h2>[[#{index.titulo}]]</h2>
+         <div class="row row-cols-3" th:if="${articulos !=null and !articulos.empty}">
+                <div class="card" th:each="articulo : ${articulos}">
+                    <div class="card-body">
+                    <h5 class="card-title">[[${articulo.descripcion}]]</h5>
+                    <h6 class="card-subtitle mb-2 text-muted text-end">
+                        [[${#numbers.formatDecimal(articulo.precio,3,2)}]]</h6>
+                    <a class="card-link" th:href= "@{/carrito/agregar/} + ${articulo.idArticulo}">[[#{accion.agregar}]]</a>
+                    <p class="card-text">[[${articulo.detalle}]]</p>
+                </div>
+           </div>          
         </div>
         
         <div th:if="${articulos ==null or articulos.empty}">
@@ -40,4 +31,7 @@
         </div>
         </div>
     </body>
+    
+    <footer th:repalace="layout/plantilla : footer"/>  
+    
 </html>
